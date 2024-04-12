@@ -188,10 +188,10 @@ public class SwiftReceiveSharingIntentPlugin: NSObject, FlutterPlugin, FlutterSt
     }
     
     private func decode(data: Data) -> [SharedMediaFile] {
-        // let encodedData = try? JSONDecoder().decode([SharedMediaFile].self, from: data)
-      	let str = String(decoding: data, as: UTF8.self).replacingOccurrences(of: ":2", with: ":\"file\"")
-        let fixedData = Data(str.utf8)
-        let encodedData = try? JSONDecoder().decode([SharedMediaFile].self, from: fixedData)
+        let encodedData = try? JSONDecoder().decode([SharedMediaFile].self, from: data)
+      	//let str = String(decoding: data, as: UTF8.self).replacingOccurrences(of: ":2", with: ":\"file\"")
+        //let fixedData = Data(str.utf8)
+        //let encodedData = try? JSONDecoder().decode([SharedMediaFile].self, from: fixedData)
         return encodedData!
     }
     
